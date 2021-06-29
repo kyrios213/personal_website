@@ -1,10 +1,10 @@
 from django.shortcuts import render
+from rest_framework import generics
 
-from .models import Profile
+from .models import Profile, Projects
+from .serializers import ProjectsSerializer
 
-def test(request):
-    profile = Profile.objects.get(pk=1)
-    context = {
-        'profile': profile,
-    }
-    return render(request, 'index.html', context)
+
+class ProjectListView(generics.ListAPIView):
+    queryset = Projects.objects.all()
+    serializer_class = ProjectsSerializer

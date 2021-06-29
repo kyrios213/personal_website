@@ -11,3 +11,17 @@ class Profile(models.Model):
 
     def __str__(self):
         return self.user.email
+
+
+class Projects(models.Model):
+    name = models.CharField(max_length=255)
+    description = models.TextField()
+    created = models.DateTimeField()
+    image = models.ImageField(upload_to='images')
+    display = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name_plural = 'Projects'

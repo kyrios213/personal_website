@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'rest_framework',
 
     'api.apps.ApiConfig',
+    'frontend.apps.FrontendConfig',
 ]
 
 MIDDLEWARE = [
@@ -137,6 +138,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIR = [
     BASE_DIR / 'static',
+    BASE_DIR / 'frontend' / 'static',
 ]
 
 MEDIA_URL = '/media/'
