@@ -14,7 +14,7 @@
     <link href="{% static 'frontend/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" />
 
     <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="{% static 'frontend/css/fontawesome.css' %}" />
+    <script src="https://kit.fontawesome.com/6ad3ddd4bb.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{% static 'frontend/css/templatemo-style.css' %}" />
     <link rel="stylesheet" href="{% static 'frontend/css/owl.css' %}" />
     <link rel="stylesheet" href="{% static 'frontend/css/lightbox.css' %}" />
@@ -53,21 +53,12 @@
                   ></a>
                 </li>
                 <li>
-                  <a href="#"><i class="fa fa-twitter"></i></a>
+                  <a href="{{ profile.linkedin }}"><i class="fa fa-linkedin"></i></a>
                 </li>
                 <li>
-                  <a href="#"><i class="fa fa-linkedin"></i></a>
-                </li>
-                <li>
-                  <a href="#"><i class="fa fa-dribbble"></i></a>
-                </li>
-                <li>
-                  <a href="#"><i class="fa fa-rss"></i></a>
+                  <a href="{{ profile.github }}"><i class="fab fa-github"></i></a>
                 </li>
               </ul>
-            </div>
-            <div class="copyright-text">
-              <p>Copyright 2019 Reflux Design</p>
             </div>
           </div>
         </div>
@@ -87,7 +78,7 @@
             <div class="row">
               <div class="col-md-6">
                 <div class="left-image">
-                  {% comment %} <img src="assets/images/left-image.jpg" alt="" /> {% endcomment %}
+                  <img src="{{ profile.resume.url }}" alt="" />
                 </div>
               </div>
               <div class="col-md-6">
@@ -103,30 +94,6 @@
                   <div class="white-button">
                     <a href="#">Read More</a>
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="right-image-post">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="left-text">
-                  <h4>Sed sagittis rhoncus velit</h4>
-                  <p>
-                    Pellentesque habitant morbi tristique senectus et netus et
-                    malesuada fames ac turpis egestas. Vestibulum fermentum
-                    eleifend nibh, vitae sodales elit finibus pretium.
-                    Suspendisse potenti. Ut sollicitudin risus a sollicitudin
-                    semper.
-                  </p>
-                  <div class="white-button">
-                    <a href="#">Read More</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="right-image">
-                  {% comment %} <img src="assets/images/right-image.jpg" alt="" /> {% endcomment %}
                 </div>
               </div>
             </div>
@@ -211,10 +178,11 @@
 
               <div class="isotope-box">
 
+                {% for project in projects %}
                 <div class="isotope-item">
                   <figure class="snip1321">
                     <img
-                      src="{% static 'frontend/images/portfolio-01.jpg' %}"
+                      src="{{ project.image.url }}"
                       alt="sq-sample26"
                     />
                     <figcaption>
@@ -224,52 +192,13 @@
                         data-title="Caption"
                         ><i class="fa fa-search"></i
                       ></a>
-                      <h4>First Title</h4>
+                      <h4>{{ project.name }}</h4>
                       <span>free to use our template</span>
                     </figcaption>
                   </figure>
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos corporis delectus blanditiis vel! Fugiat voluptatem sapiente doloremque optio debitis eos!</p>
+                  <p>{{ project.description }}</p>
                 </div>
-
-                <div class="isotope-item">
-                  <figure class="snip1321">
-                    <img
-                      src="{% static 'frontend/images/portfolio-01.jpg' %}"
-                      alt="sq-sample26"
-                    />
-                    <figcaption>
-                      <a
-                        href="assets/images/portfolio-01.jpg"
-                        data-lightbox="image-1"
-                        data-title="Caption"
-                        ><i class="fa fa-search"></i
-                      ></a>
-                      <h4>First Title</h4>
-                      <span>free to use our template</span>
-                    </figcaption>
-                  </figure>
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos corporis delectus blanditiis vel! Fugiat voluptatem sapiente doloremque optio debitis eos!</p>
-                </div>
-
-                <div class="isotope-item">
-                  <figure class="snip1321">
-                    <img
-                      src="{% static 'frontend/images/portfolio-01.jpg' %}"
-                      alt="sq-sample26"
-                    />
-                    <figcaption>
-                      <a
-                        href="assets/images/portfolio-01.jpg"
-                        data-lightbox="image-1"
-                        data-title="Caption"
-                        ><i class="fa fa-search"></i
-                      ></a>
-                      <h4>First Title</h4>
-                      <span>free to use our template</span>
-                    </figcaption>
-                  </figure>
-                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos corporis delectus blanditiis vel! Fugiat voluptatem sapiente doloremque optio debitis eos!</p>
-                </div>
+                {% endfor %}
 
               </div>
             </div>
