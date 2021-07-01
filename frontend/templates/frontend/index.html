@@ -220,7 +220,8 @@
           <div class="row">
             <div class="right-content">
               <div class="container">
-                <form id="contact" action="" method="post">
+                <form id="contact" method='POST' action=''>
+                {% csrf_token %}
                   <div class="row">
                     <div class="col-md-6">
                       <fieldset>
@@ -270,12 +271,10 @@
                         ></textarea>
                       </fieldset>
                     </div>
-                    <div class="col-md-12">
-                      <fieldset>
-                        <button type="submit" id="form-submit" class="button">
+                    <div class="col-md-12 text-center">    
+                        <button type="submit" class="button">
                           Send Message
-                        </button>
-                      </fieldset>
+                        </button>                                            
                     </div>
                   </div>
                 </form>
