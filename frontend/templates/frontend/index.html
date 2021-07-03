@@ -17,6 +17,7 @@
     <script src="https://kit.fontawesome.com/6ad3ddd4bb.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{% static 'frontend/css/templatemo-style.css' %}" />
     <link rel="stylesheet" href="{% static 'frontend/css/owl.css' %}" />
+    <link rel="stylesheet" href="{% static 'frontend/styles.css' %}" />
     <link rel="stylesheet" href="{% static 'frontend/css/lightbox.css' %}" />
 
     <script src="{% static 'frontend/main.js' %}" defer></script>
@@ -31,17 +32,17 @@
           <i class="fa fa-times" id="menu-close"></i>
           <div class="container">
             <div class="image">
-              <a href="#"><img src="{{ profile.profile_pic.url }}" alt="profile pic" /></a>
+              <img src="{{ profile.profile_pic.url }}" alt="profile pic" />
             </div>
             <div class="author-content">
-              <h4>Reflux Me</h4>
-              <span>Web Designer</span>
+              <h4>{{ profile.user.last_name }}, {{ profile.user.first_name }}</h4>
+              <span>Web Developer</span>
             </div>
             <nav class="main-nav" role="navigation">
               <ul class="main-menu">
                 <li><a href="#section1">About Me</a></li>
                 <li><a href="#section2">What I’m good at</a></li>
-                <li><a href="#section3">My Work</a></li>
+                <li><a href="#section3">My Projects</a></li>
                 <li><a href="#section4">Contact Me</a></li>
               </ul>
             </nav>
@@ -78,12 +79,12 @@
             <div class="row">
               <div class="col-md-6">
                 <div class="left-image">
-                  <img src="{{ profile.resume.url }}" alt="" />
+                  <img src="{{ profile.resume.url }}" alt="Profile Pic" id="myImg"/>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="right-text">
-                  <h4>Reflux HTML CSS Template</h4>
+                  <h4>My Resume</h4>
                   <p>
                     Donec tristique feugiat lacus, at sollicitudin nunc euismod
                     sed. Mauris viverra, erat non sagittis gravida, elit dui
@@ -91,8 +92,17 @@
                     tincidunt quam vitae neque pharetra dignissim eget ut
                     libero.
                   </p>
-                  <div class="white-button">
-                    <a href="#">Read More</a>
+                  <!-- The Modal -->
+                  <div id="myModal" class="modal">
+
+                    <!-- The Close Button -->
+                    <span class="close">&times;</span>
+
+                    <!-- Modal Content (The Image) -->
+                    <img class="modal-content" id="img01">
+
+                    <!-- Modal Caption (Image Text) -->
+                    <div id="caption"></div>
                   </div>
                 </div>
               </div>
@@ -165,7 +175,7 @@
       <section class="section my-work" data-section="section3">
         <div class="container">
           <div class="section-heading">
-            <h2>My Work</h2>
+            <h2>My Projects</h2>
             <div class="line-dec"></div>
             <span
               >Aenean sollicitudin ex mauris, lobortis lobortis diam euismod sit
@@ -186,17 +196,13 @@
                       alt="sq-sample26"
                     />
                     <figcaption>
-                      <a
-                        href="assets/images/portfolio-01.jpg"
-                        data-lightbox="image-1"
-                        data-title="Caption"
-                        ><i class="fa fa-search"></i
-                      ></a>
                       <h4>{{ project.name }}</h4>
-                      <span>free to use our template</span>
-                    </figcaption>
+                    </figcaption> 
                   </figure>
-                  <p>{{ project.description }}</p>
+                  <div class="text-center">
+                    <h3>{{ project.name }}</h3>
+                    <p>{{ project.description }}</p>
+                  </div>
                 </div>
                 {% endfor %}
 
