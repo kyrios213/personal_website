@@ -20,7 +20,7 @@ def SendEmail(request):
     form = SendEmailForm
     if request.method == 'POST':
         data = request.POST
-        message = f"From: {data['email']} \n\n{data['body']}"
+        message = f"From: {data['email']} \n\nHello my name is: {data['name']} \n{data['body']}"
         send_mail(
             data['subject'],
             message,
