@@ -20,6 +20,7 @@ class Projects(models.Model):
     created = models.DateTimeField()
     image = models.ImageField(upload_to='images')
     display = models.BooleanField(default=True)
+    code_url = models.CharField(max_length=255, null=True)
 
     def __str__(self):
         return self.name
