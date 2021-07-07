@@ -7,7 +7,7 @@ class Profile(models.Model):
     github = models.CharField(max_length=255)
     linkedin = models.CharField(max_length=255)
     facebook = models.CharField(max_length=255, null=True)
-    resume = models.ImageField(upload_to='resume')
+    resume = models.FileField(upload_to='resume')
     profile_pic = models.ImageField(upload_to='profile_pic')
 
     def __str__(self):

@@ -42,9 +42,11 @@
               <ul class="main-menu">
                 <li><a href="#section1">About Me</a></li>
                 <li><a href="#section2">What I’m good at</a></li>
+                <li><a href="#cert">My Certificates</a></li>
                 <li><a href="#section3">My Projects</a></li>
                 <li><a href="#section4">Contact Me</a></li>
               </ul>
+              <a id="resume-dl" class="btn btn-secondary mt-2 text-light pb-2">My Resume</a>
             </nav>
             <div class="social-network">
               <ul class="soial-icons">
@@ -71,41 +73,8 @@
             <h2>About Me</h2>
             <div class="line-dec"></div>
             <span
-              >I'm an aspiring web developer that mainly focus on python and the django web framework. I first started with flask but immediately fell in love with django. I've learned a lot from online tutorials and the django documentations found on the web. Now I'm looking for opportunities to prove my skills in Python and in Django.</span
+              >I'm an aspiring web developer that mainly focuses on python and the django web framework. I first started with flask but immediately fell in love with django. I've learned a lot from online tutorials and the django documentation found on the web. Now I'm looking for opportunities to prove my skills in Python and in Django.</span
             >
-          </div>
-          <div class="left-image-post">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="left-image">
-                  <img src="{{ profile.resume.url }}" alt="Profile Pic" id="myImg"/>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="right-text">
-                  <h4>My Resume</h4>
-                  <p>
-                    Donec tristique feugiat lacus, at sollicitudin nunc euismod
-                    sed. Mauris viverra, erat non sagittis gravida, elit dui
-                    mollis ante, sit amet eleifend purus ligula eget eros. Sed
-                    tincidunt quam vitae neque pharetra dignissim eget ut
-                    libero.
-                  </p>
-                  <!-- The Modal -->
-                  <div id="myModal" class="modal">
-
-                    <!-- The Close Button -->
-                    <span class="close">&times;</span>
-
-                    <!-- Modal Content (The Image) -->
-                    <img class="modal-content" id="img01">
-
-                    <!-- Modal Caption (Image Text) -->
-                    <div id="caption"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -113,7 +82,7 @@
       <section class="section my-services" data-section="section2">
         <div class="container">
           <div class="section-heading">
-            <h2>What I’m good at?</h2>
+            <h2>What I’m good at</h2>
             <div class="line-dec"></div>
           </div>
           <div class="row">
@@ -122,7 +91,7 @@
                 <div class="first-service-icon service-icon"></div>
                 <h4>Django</h4>
                 <p>
-                  My main web framework for creating websites. I use Django exclusively and have been learning how to use it along side JavaScript, HTML, CSS. I have also learned how to create restful apis with Django's django rest framework and making calls to it using Ajax and JavaScript's fetch api.
+                  My main web framework for creating websites. I use Django exclusively and have been learning how to use it alongside JavaScript, HTML, CSS. I have also learned how to create restful apis with Django's django rest framework and making calls to it using Ajax and JavaScript fetch api.
                 </p>
               </div>
             </div>
@@ -140,7 +109,7 @@
                 <div class="third-service-icon service-icon"></div>
                 <h4>Python</h4>
                 <p>
-                  My main programming langauge and where I focused most of my time learning. Before learning Django I first learn the basics of Python, specificaly I first learn scripting and file manipulation using Python. I learned the different data types that is built in Python as well as funcions, loops, statements and OOP or object oriented programming. 
+                  My main programming language and where I focused most of my time learning. Before learning Django I first learned the basics of Python, specifically I first learned scripting and file manipulation using Python. I learned the different data types that are built in Python as well as functions, loops, statements and OOP or object oriented programming.
                 </p>
               </div>
             </div>
@@ -154,6 +123,110 @@
               </div>
             </div>
           </div>
+      
+        </div>
+      </section>
+
+      <section class="section" data-section='cert'>
+        <div class="container">
+          <div class="section-heading">
+            <h2>My Certificates</h2>
+            <div class="line-dec"></div>
+            <span
+              >I'm an aspiring web developer that mainly focuses on python and the django web framework. I first started with flask but immediately fell in love with django. I've learned a lot from online tutorials and the django documentation found on the web. Now I'm looking for opportunities to prove my skills in Python and in Django.</span
+            >
+          </div>
+          <div class="row">
+
+            <div class="left-image-post">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="left-image">
+                    <img src="{% static 'frontend/images/Cert_Django.png' %}" alt="Django Certificate" />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="right-text">
+                    <h4>Reflux HTML CSS Template</h4>
+                    <p>
+                      Donec tristique feugiat lacus, at sollicitudin nunc euismod
+                      sed. Mauris viverra, erat non sagittis gravida, elit dui
+                      mollis ante, sit amet eleifend purus ligula eget eros. Sed
+                      tincidunt quam vitae neque pharetra dignissim eget ut
+                      libero.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="right-image-post">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="left-text">
+                    <h4>Sed sagittis rhoncus velit</h4>
+                    <p>
+                      Pellentesque habitant morbi tristique senectus et netus et
+                      malesuada fames ac turpis egestas. Vestibulum fermentum
+                      eleifend nibh, vitae sodales elit finibus pretium.
+                      Suspendisse potenti. Ut sollicitudin risus a sollicitudin
+                      semper.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="right-image">
+                    <img src="{% static 'frontend/images/Cert_Flask.png' %}" alt="Flask Certificate" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="left-image-post">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="left-image">
+                    <img src="{% static 'frontend/images/Cert_JS.png' %}" alt="JavaScript Certificate" />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="right-text">
+                    <h4>Reflux HTML CSS Template</h4>
+                    <p>
+                      Donec tristique feugiat lacus, at sollicitudin nunc euismod
+                      sed. Mauris viverra, erat non sagittis gravida, elit dui
+                      mollis ante, sit amet eleifend purus ligula eget eros. Sed
+                      tincidunt quam vitae neque pharetra dignissim eget ut
+                      libero.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="right-image-post">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="left-text">
+                    <h4>Sed sagittis rhoncus velit</h4>
+                    <p>
+                      Pellentesque habitant morbi tristique senectus et netus et
+                      malesuada fames ac turpis egestas. Vestibulum fermentum
+                      eleifend nibh, vitae sodales elit finibus pretium.
+                      Suspendisse potenti. Ut sollicitudin risus a sollicitudin
+                      semper.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="right-image">
+                    <img src="{% static 'frontend/images/Cert_Python.png' %}" alt="Python Certificate" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -180,7 +253,7 @@
                       alt="sq-sample26"
                     />
                     <figcaption>
-                      <a href="{{ project.code_url }}" class="btn btn-outline-danger"><h4 class="pb-3">Live Code</h4></a>
+                      <a href="{{ project.code_url }}" class="btn btn-outline-danger">Live Code</a>
                     </figcaption> 
                   </figure>
                   <div class="text-center">
@@ -271,6 +344,7 @@
           </div>
         </div>
       </section>
+
     </div>
 
 

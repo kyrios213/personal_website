@@ -1,6 +1,14 @@
-from django.shortcuts import render
+from boto3 import session
+from django.http.response import HttpResponseRedirect
+from django.shortcuts import redirect, render
 from django.core.mail import send_mail
 from django.conf import settings
+import boto3
+from boto3.session import Session
+from decouple import config
+from pathlib import Path
+
+downloads_path = str(Path.home() / "Downloads")
 
 from api.models import Profile, Projects
 from .forms import SendEmailForm
@@ -30,3 +38,14 @@ def SendEmail(request):
         )
 
     return render(request, 'frontend/email.html', {'form': form})
+
+
+def ResumeDL(request):
+    # session = Session(aws_access_key_id=config('AWS_ACCESS_KEY_ID'), aws_secret_access_key=config('AWS_SECRET_ACCESS_KEY'))
+
+    # session.resource('s3').Bucket('static-port').download_file('media/resume/Resume.png', '/Users/Kyrios/Desktop/Resume.png')
+    s3 = boto3.client('s3', aws_access_key_id=config('AWS_ACCESS_KEY_ID'), aws_secret_access_key=config('AWS_SECRET_ACCESS_KEY'))
+    with open(downloads_path + '/Resume.pdf', 'wb') as f:
+        s3.download_fileobj('static-port', 'media/resume/Resume.pdf', f)
+
+    return redirect('index')
