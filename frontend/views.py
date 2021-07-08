@@ -41,9 +41,7 @@ def SendEmail(request):
 
 
 def ResumeDL(request):
-    # session = Session(aws_access_key_id=config('AWS_ACCESS_KEY_ID'), aws_secret_access_key=config('AWS_SECRET_ACCESS_KEY'))
 
-    # session.resource('s3').Bucket('static-port').download_file('media/resume/Resume.png', '/Users/Kyrios/Desktop/Resume.png')
     s3 = boto3.client('s3', aws_access_key_id=config('AWS_ACCESS_KEY_ID'), aws_secret_access_key=config('AWS_SECRET_ACCESS_KEY'))
     with open(downloads_path + '/Resume.pdf', 'wb') as f:
         s3.download_fileobj('static-port', 'media/resume/Resume.pdf', f)
