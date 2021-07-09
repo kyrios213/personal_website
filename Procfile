@@ -1,0 +1,1 @@
+web: waitress-serve --listen=*:5000 core.wsgi:application
